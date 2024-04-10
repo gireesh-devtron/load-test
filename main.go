@@ -1,3 +1,13 @@
+package main
+
+import (
+	"fmt"
+	"log"
+	"net/http"
+	"strconv"
+	"sync"
+)
+
 func main() {
 	ch := make(chan struct{})
 	fn := func(n int) {
@@ -27,3 +37,4 @@ func main() {
 		log.Fatal(err)
 	}()
 	<-ch
+}
